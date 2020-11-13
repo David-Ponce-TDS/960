@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:hint="Aoellido"
+        android:hint="Apellido"
         android:inputType="textPersonName"
         android:paddingTop="12dp" />
 
