@@ -9,23 +9,21 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/txt_nombreUsuario"
+        android:id="@+id/et_nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:ema="10"
         android:hint="Nombre"
         android:inputType="textPersonName"
         android:paddingTop="12dp"/>
 
 
     <EditText
-        android:id="@+id/txt_apellidoUsuario"
+        android:id="@+id/et_apellido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:hint="Aoellido"
-        android:ema="10"
         android:inputType="textPersonName"
         android:paddingTop="12dp" />
 

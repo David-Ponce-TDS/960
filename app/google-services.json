@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "654207820709",
+    "firebase_url": "https://optativa1-960.firebaseio.com",
+    "project_id": "optativa1-960",
+    "storage_bucket": "optativa1-960.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654207820709:android:c95e15153e726d26f4be4c",
+        "android_client_info": {
+          "package_name": "com.optativa1.a960m"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "654207820709-ol6ostusa383k0apnscgv6o9l0j4r6qa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.optativa1.a960m",
+            "certificate_hash": "442a74d9627f584b0f906a72343ab7caa847961c"
+          }
+        },
+        {
+          "client_id": "654207820709-hsih2sanh67s9jp1oksq7iipjuiau95s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIcYRg_k-Tsa8DZr1PIQ4UkvK00fV9jww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "654207820709-hsih2sanh67s9jp1oksq7iipjuiau95s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
