@@ -40,15 +40,18 @@ class MainActivity : AppCompatActivity(),  View.OnClickListener {
         btn_crear.setOnClickListener(this)
     }
 
-    private fun validar(){
+    private fun validar(): Boolean {
         val nombre = et_nombre.text.toString()
         val apellido = et_apellido.text.toString()
         if(nombre == ""){
             et_nombre.setError("Obligatorio")
+            return false
         }
         if(apellido == ""){
             et_apellido.setError("Obligatorio")
+            return false
         }
+        return true
     }
 
     private fun limpiar(){
@@ -65,9 +68,9 @@ class MainActivity : AppCompatActivity(),  View.OnClickListener {
     private fun crear(){
         val nombre = et_nombre.text.toString()
         val apellido = et_apellido.text.toString()
-        if(nombre == ""){
-            validar()
-        }else{
+        val validationResult = validar()
+
+        if(validationResult){
             val U =  Usuario(nombre, apellido)
             var DB = database.collection("usuarios").document()
             DB.set(U.toMap()).addOnFailureListener {
