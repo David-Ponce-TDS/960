@@ -1,37 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:background="@color/cardview_dark_background"
+    tools:context=".MainActivity">
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"/>
 
-    <EditText
-        android:id="@+id/et_nombre"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:hint="Nombre"
-        android:inputType="textPersonName"
-        android:paddingTop="12dp"/>
-
-
-    <EditText
-        android:id="@+id/et_apellido"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:hint="Apellido"
-        android:inputType="textPersonName"
-        android:paddingTop="12dp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_crear"
-        android:layout_width="match_parent"
-        android:layout_height="76dp"
-        android:text="Crear">
-    </com.google.android.material.button.MaterialButton>
-
-</LinearLayout>
+        android:id="@+id/bottom_navigation"
+        app.itemBackground="@color/green"
+        app.itemTextColor="@drawable/selector"
+        app.itemIconTint="drawable/selector"
+        app.menu="@menu/menu_navigation"
+        app:layout_anchorGravity="bottom"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>
