@@ -51,28 +51,34 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 		btn_crear.setOnClickListener(this)
 	}
 
-	private fun validar() {
+	private fun validar():Boolean {
+		var res:Boolean = true
 		val nombre = et_nombre.text.toString()
 		if (nombre == "") {
 			et_nombre.setError("Obligatorio")
+			res = false
 		}
 		val duracion = et_duracion.text.toString()
 		if (duracion == "") {
 			et_duracion.setError("Obligatorio")
+			res = false
 		}
 				val variacion = et_variacion.text.toString()
 		if (variacion == "") {
 			et_variacion.setError("Obligatorio")
+			res = false
 		}
 		val descripcion = et_descripcion.text.toString()
 		if (descripcion == "") {
 			et_descripcion.setError("Obligatorio")
+			res = false
 		}
 
 		/*val sw_atencion_completa = sw_atencion_completa.text
 		if (sw_atencion_completa == "") {
 			sw_atencion_completa.setError("Obligatorio")
 		}*/
+		return res
 	}
 
 	private fun limpiar() {
@@ -95,8 +101,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 		val variacion = et_variacion.text.toString()
 		val descripcion = et_descripcion.text.toString()
 		val atencion_completa = true
-		if (nombre == "") {
-			validar()
+		if (!validar()) {
 		} else {
 			val t = Tarea(nombre,duracion,variacion,descripcion, atencion_completa)
 			var DB = database.collection("tareas").document()
