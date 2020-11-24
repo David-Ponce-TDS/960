@@ -7,13 +7,16 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Switch
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
 import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
+import com.optativa1.a960m.fragment.CalendarioFragment
+import com.optativa1.a960m.fragment.InicioFragment
+import com.optativa1.a960m.fragment.TareasFragment
 import com.optativa1.a960m.model.Tarea
-import com.optativa1.a960m.model.Usuario
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -24,15 +27,47 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 	private lateinit var et_variacion: EditText
 	private lateinit var sw_atencion_completa: Switch
 	private lateinit var database: FirebaseFirestore
+	private lateinit var bottom_nav: BottomNavigationView
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
-		//bottomNavigationView.menu.getItem(3).isEnabled = false
+		bottomNavigationView.menu.getItem(3).isEnabled = false
+
+		openFragment(InicioFragment.newInstance())
+		//BOTTOM NAV
+		bottom_nav = findViewById(R.id.bottomNavigationView)
+		bottom_nav.setOnNavigationItemSelectedListener { menuItem ->
+			when (menuItem.itemId) {
+				R.id.inicio -> {
+					val fragment = InicioFragment.newInstance()
+					openFragment(fragment)
+					true
+				}
+				R.id.calendario -> {
+					val fragment = CalendarioFragment.newInstance()
+					openFragment(fragment)
+					true
+				}
+				R.id.tareas -> {
+					val fragment = TareasFragment.newInstance()
+					openFragment(fragment)
+					true
+				}
+				else -> false
+			}
+		}
 		//setContentView(R.layout.nueva_tarea)
 		/*instanciar()
 		escuchar()
 		iniciarDB()//DATABASE*/
+	}
+
+	private fun openFragment(fragment: Fragment) {
+		val transaction = supportFragmentManager.beginTransaction()
+		transaction.replace(R.id.container, fragment)
+		transaction.addToBackStack(null)
+		transaction.commit()
 	}
 
 	private fun iniciarDB() {
