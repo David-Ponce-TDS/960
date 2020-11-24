@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/triangulo"
-        android:title="triangulo"
-        android:icon="@drawable/ic_dashboard"/>
-    <item
-        android:id="@+id/circulo"
-        android:title="circulo"
+        android:id="@+id/home"
+        android:title="Inicio"
         android:icon="@drawable/ic_home"/>
     <item
-        android:id="@+id/cuadrado"
-        android:title="cuadrado"
-        android:icon="@drawable/ic_info"/>
+        android:id="@+id/calendar"
+        android:title="Calendario"
+        android:icon="@drawable/ic_calendar"/>
+    <item
+        android:id="@+id/list"
+        android:title="Tareas"
+        android:icon="@drawable/ic_list"/>
+    <item
+        android:id="@+id/down"
+        android:title=""/>
+        <!-- android:icon="@drawable/ic_down" -->
+
 </menu>

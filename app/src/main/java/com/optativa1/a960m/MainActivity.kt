@@ -12,6 +12,7 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.optativa1.a960m.model.Tarea
 import com.optativa1.a960m.model.Usuario
+import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 
@@ -26,11 +27,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		//setContentView(R.layout.activity_main)
-		setContentView(R.layout.nueva_tarea)
-		instanciar()
+		setContentView(R.layout.activity_main)
+		//bottomNavigationView.menu.getItem(3).isEnabled = false
+		//setContentView(R.layout.nueva_tarea)
+		/*instanciar()
 		escuchar()
-		iniciarDB()//DATABASE
+		iniciarDB()//DATABASE*/
 	}
 
 	private fun iniciarDB() {
